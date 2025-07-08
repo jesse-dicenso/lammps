@@ -65,7 +65,7 @@ requires NumPy (https://numpy.org). In the top-level folder, install with
   python -m pip install .
 
 This should install QMHub into your Python's site-packages. Copy the helPME
-shared object file to your path/to/site-packages/qmhub folder. This completes 
+shared object file to your /path/to/site-packages/qmhub folder. This completes 
 the installation of QMHub, which should be ready to use.
 
 Step 4)
@@ -81,10 +81,10 @@ Running QM/MM with QMHub and LAMMPS
 QMHub interfaces MM packages with QM packages. For a QM/MM run with QMHub, the
 three requirements are a suitable MM package (in this case, LAMMPS), a suitable
 QM package, the MM package input files (LAMMPS input file), and a configuration 
-file for QMHub named qmhub.ini. The qmhub.ini contains information regarding 
+file for QMHub named "qmhub.ini". The "qmhub.ini" file has information regarding
 the QM/MM model options, the QM package, and the QM package input options. An 
-example qmhub.ini is given below (see https://doi.org/10.1063/5.0038120 for 
-details on the model parameters):
+example "qmhub.ini" file is given below (see https://doi.org/10.1063/5.0038120 
+for details on the model parameters):
 
 *** Start example qmhub.ini file ***
   [model]
