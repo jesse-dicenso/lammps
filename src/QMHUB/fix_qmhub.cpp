@@ -66,8 +66,14 @@ FixQmhub::FixQmhub(LAMMPS *lmp, int narg, char **arg) :
   int igroup_mm = group->find("MM");
   if (igroup_mm == -1) error->all(FLERR, "fix qmhub error: group 'MM' not defined");
   num_mm      = group->count(igroup_mm);
-  groupbit_mm = group->bitmask[igroup_mm];
+  groupbit_mm = group->bitmask[igroup_mm]; 
 
+  for (int i = 0; i < atom->nlocal; i++) {
+    if (atom->mask[i] & groupbit_qm & groupbit_mm) {
+      error->all(FLERR, "fix qmhub error: group 'QM' and group 'MM' must be disjoint");
+    }
+  }
+  
   E_SCF = 0.0; 
 }
 
